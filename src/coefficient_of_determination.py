@@ -5,20 +5,7 @@ from sklearn import linear_model
 
 
 def coefficient_of_determination():
-    df = pd.read_csv('src/mystery_data.tsv', sep='\t')
-    x = df.loc[:, 'X1':'X5']
-    y = df.loc[:, 'Y']
-    model = linear_model.LinearRegression(fit_intercept=True)
-    model.fit(x,y)
-    a = model.score(x, y)
-    to_add = [a]
-    for column in df.columns:
-        r = df.loc[:, column]
-        r = r.values.reshape(-1,1)
-        model.fit(r,y)
-        s = model.score(r, y)
-        to_add.append(s)
-    return to_add    
+    pass
 
 def main():
     lst = coefficient_of_determination()
